@@ -1,11 +1,9 @@
 "use strict";
 
 function solveEquation(a, b, c) {
-  let arr;
+  let arr=[];
   const d = b ** 2 - 4 * a * c;
   if (d<0) {
-    arr = [];
-  
   return arr;
   }
   if (d=0) {
