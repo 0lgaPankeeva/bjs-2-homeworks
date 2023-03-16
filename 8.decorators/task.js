@@ -40,3 +40,4 @@ function debounceDecoratorNew(func) {
     }
     return wrapper;
 }
+}

@@ -4,16 +4,18 @@ class AlarmClock {
     this.timerId = null;
 }
 
-addClock(time, canCall, id) {
-    if (typeof id === 'undefined') {
-        throw new Error('error text')
+addClock(time, callback, id) {
+    if ( find(id) === "undefined") {
+
+        throw new Error("error text")
     }
-    else if (typeof this.alarmCollection.find((clock) => clock.id === id) !=="undefined") {
-        return console..error("already exist");
+    else if (this.alarmCollection.find((clock) => clock.id === id) !=="undefined") {
+        return console.error("already exist");
     }
     return this.alarmCollection.push({
-        id, time, canCall
+        id, time, callback
     });
+    }
 
      removeClock(id) {
         let currentLenght = this.alarmCollection.length;
@@ -46,7 +48,7 @@ addClock(time, canCall, id) {
             this.alarmCollection.forEach((clock) => checkClock(clock));
           }, 2000);
         }
-        return;
+      
       }
 
       stop() {
@@ -80,6 +82,4 @@ function testCase (){
     alarmClock.clearAlarms();
     alarmClock.printAlarms();
 }
-}
 
-}
