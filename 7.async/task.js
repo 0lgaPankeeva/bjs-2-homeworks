@@ -5,11 +5,11 @@ class AlarmClock {
 }
 
 addClock(time, callback, id) {
-    if ( find(id) === "undefined") {
+    if (!id ) {
 
         throw new Error("error text")
     }
-    else if (this.alarmCollection.find((clock) => clock.id === id) !=="undefined") {
+    else if (this.alarmCollection.find((clock) => clock.id === id)) {
         return console.error("already exist");
     }
     return this.alarmCollection.push({
